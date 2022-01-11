@@ -20,8 +20,9 @@
     <span v-if="! field.hideText" class="ml-2">{{ __('Impersonate') }}</span>
 
     <portal to="modals">
-      <transition v-if="openModal" name="fade">
+      <!-- <transition v-if="openModal" name="fade"> -->
         <impersonate-modal
+          v-if="openModal"
           @confirm="openUrl"
           @close="openModal = false"
           mode="delete"
@@ -38,7 +39,7 @@
             </div>
           </div>
         </impersonate-modal>
-      </transition>
+      <!-- </transition> -->
     </portal>
   </a>
 </template>
